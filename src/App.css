@@ -146,6 +146,13 @@ input, label{
   border-radius: 2px;
 }
 
+.disabled-button {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+  border: 1px solid #999;
+}
+
 .btnReceive input{
   padding: 12px 16px;
   margin-top: 20px;
@@ -155,6 +162,8 @@ input, label{
   border-radius: 4px;
 
 }
+
+
 
 .confirm span{
   color: blue;
