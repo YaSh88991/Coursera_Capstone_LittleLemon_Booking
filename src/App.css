@@ -111,17 +111,28 @@ button {
   cursor: pointer;
 }
 
-.banner-img{
-  position: absolute;
-  right: 13%;
-  top: 15%;
-  width: 400px;
+.banner-img {
+  position: absolute; /* Fixed position for fixed positioning relative to viewport */
+  right: 10%; /* Adjusted right position for smaller screens */
+  top: 10%; /* Adjusted top position for smaller screens */
+  width: 300px; /* Adjusted width for smaller screens */
+  max-width: 90%; /* Added max-width for responsiveness */
+  z-index: 100; /* Ensure it remains above other elements */
+  overflow: hidden; /* Hide overflowing content */
 }
 
 .banner-img img {
-  width: 100%;
-  height: 400px;
-  border-radius: 20px;
+  display: block;
+  width: 100%; /* Ensure image fills its container */
+  height: auto; /* Allow image to scale proportionally */
+  max-width: none; /* Remove max-width on smaller screens */
+  border-radius: 20px; /* Rounded corners for aesthetic */
+}
+
+@media screen and (max-width: 1060px) {
+  .banner-img {
+    display: none; /* Hide the banner image when screen width is 1060px or less */
+  }
 }
 
 
@@ -172,58 +183,76 @@ input, label{
 
 /* menu items */
 
-.menu-container{
+.menu-container {
   margin: 110px auto;
-  padding: 10px 13%;
+  padding: 10px 5%;
+  max-width: 1200px; /* Added max-width to limit container width */
 }
 
-.menu-container h2{
+.menu-container h2 {
   color: #000;
 }
 
-.menu-header{
+.menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-.cards{
+
+.cards {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 2rem 1rem;
+  flex-wrap: wrap;
 }
 
-.menu-items{
-  /* height: 400px; */
-  width: 350px;
-  background: #a9c8be;
+.menu-items {
+  width: calc(33.33% - 2rem); /* Adjusted width to fit three items per row */
+  background: #edefee;
   border-radius: 8px;
+  margin-bottom: 30px; /* Added margin-bottom for spacing between cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-.menu-container img{
+.menu-items:hover {
+  transform: translateY(-5px); /* Example of hover effect: lift card slightly */
+}
+
+.menu-container img {
   width: 100%;
-  height: 233px;
-  border-radius: 8px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Adjusted border-radius for image corners */
 }
 
-.menu-content{
-  padding: 5px 15px;
+.menu-content {
+  padding: 15px; /* Increased padding for better spacing */
 }
 
-
-.menu-content .heading{
+.menu-content .heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Added margin for spacing between title and price */
 }
 
-.orderbtn{
-  padding: 5px 12px;
-  margin-bottom: 20px;
-  font-size: 16px;
+.orderbtn {
+  padding: 8px 16px; /* Adjusted padding for button */
+  font-size: 14px; /* Slightly reduced font size */
   font-weight: 600;
+  background-color: #4caf50; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.orderbtn:hover {
+  background-color: #45a049; /* Darker shade on hover */
 }
 
 footer section{
